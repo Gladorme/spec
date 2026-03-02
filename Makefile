@@ -23,3 +23,12 @@ checkstyle:
 go-test:
 	@echo ">> Run all go tests"
 	$(GO) test -count=1 -v ./...
+
+.PHONY: cue-gen
+cue-gen:
+	@echo ">> Generate CUE definitions from golang datamodel"
+	@for pkg in $$($(GO) list github.com/perses/spec/go/...); do \
+		$(CUE) get go $$pkg; \
+	done
+	cp -r cue.mod/gen/github.com/perses/spec/go/* cue/ && rm -r cue.mod/gen
+	find cue/ -name "*.cue" -exec sed -i 's/\"github.com\/perses\/spec\/go/\"github.com\/perses\/spec\/cue/g' {} \;
