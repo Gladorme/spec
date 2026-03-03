@@ -43,3 +43,50 @@ jobs:
       - name: install deps
         run: cd ./ts && npm ci
       - run: cd ./ts && npm run type-check
+  build:
+    name: 'build'
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - uses: perses/github-actions@v0.11.0
+      - uses: ./.github/perses-ci/actions/setup_environment
+        with:
+          enable_npm: true
+          nvmrc_path: './ts/.nvmrc'
+      - name: install dependencies
+        run: cd ./ts && npm ci
+      - name: build libraries
+        run: cd ./ts && npm run build
+      - name: store libraries archives
+        uses: actions/upload-artifact@v7
+        with:
+          name: archives
+          path: |
+            ts/dist
+            !ts/node_modules
+  release:
+    name: 'release'
+    needs: 'build'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: ${{ github.event.release.tag_name }}
+    env:
+      GITHUB_TOKEN: ${{ github.TOKEN }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - uses: perses/github-actions@v0.11.0
+      - uses: ./.github/perses-ci/actions/setup_environment
+        with:
+          enable_npm: true
+          nvmrc_path: './ts/.nvmrc'
+      - name: Download archive
+        uses: actions/download-artifact@v8
+        with:
+          name: archives
+      - name: Publish npm package
+        run: cd ts && npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
