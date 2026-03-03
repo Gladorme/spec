@@ -1,0 +1,45 @@
+name: ts
+on:
+  push:
+    branches:
+      - main
+      - release/*
+      - snapshot/*
+    tags:
+      - v*
+  pull_request:
+  merge_group:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.ref_name != 'main' }}
+
+jobs:
+  lint:
+    name: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - uses: perses/github-actions@v0.11.0
+      - uses: ./.github/perses-ci/actions/setup_environment
+        with:
+          enable_npm: true
+          nvmrc_path: "./ts/.nvmrc"
+      - name: install deps
+        run: cd ./ts && npm ci
+      - run: cd ./ts && npm run lint
+  type_check:
+    name: "type check"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v6
+      - uses: perses/github-actions@v0.11.0
+      - uses: ./.github/perses-ci/actions/setup_environment
+        with:
+          enable_npm: true
+          nvmrc_path: "./ts/.nvmrc"
+      - name: install deps
+        run: cd ./ts && npm ci
+      - run: cd ./ts && npm run type-check
