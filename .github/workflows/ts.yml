@@ -70,11 +70,6 @@ jobs:
     name: 'release'
     needs: 'build'
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    if: ${{ github.event.release.tag_name }}
-    env:
-      GITHUB_TOKEN: ${{ github.TOKEN }}
     steps:
       - name: checkout
         uses: actions/checkout@v6
@@ -87,7 +82,12 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: archives
+          path: ts/dist
+      - name: Dry run
+        if: ${{ !github.event.release.tag_name }}
+        run: cd ts && npm publish --access public --dry-run
       - name: Publish npm package
+        if: ${{ github.event.release.tag_name }}
         run: cd ts && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
