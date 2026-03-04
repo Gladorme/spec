@@ -4,11 +4,11 @@ on:
     branches:
       - main
       - release/*
-      - snapshot/*
-    tags:
-      - v*
   pull_request:
   merge_group:
+  release:
+    types:
+      - published
 
 jobs:
   unit-test:

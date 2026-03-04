@@ -10,8 +10,8 @@
     <packaging>jar</packaging>
 
     <name>Perses</name>
-    <description>Perses monitoring and dashboard project</description>
-    <url>https://github.com/perses/perses</url>
+    <description>Perses dashboard and datasource specification</description>
+    <url>https://github.com/perses/spec</url>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

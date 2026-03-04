@@ -4,11 +4,11 @@ on:
     branches:
       - main
       - release/*
-      - snapshot/*
-    tags:
-      - v*
   pull_request:
   merge_group:
+  release:
+    types:
+      - published
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -18,7 +18,7 @@ jobs:
   publish-module:
     name: "publish module to Central Registry"
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' && startsWith(github.ref_name, 'v') }}
+    if: ${{ github.event.release.tag_name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
