@@ -27,3 +27,12 @@ updates:
     gomod:
       patterns:
         - "*"
+- package-ecosystem: "maven"
+  directory: "/java"
+  open-pull-requests-limit: 10
+  schedule:
+    interval: "weekly"
+  groups:
+    maven:
+      patterns:
+        - "*"
