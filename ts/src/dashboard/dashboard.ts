@@ -17,7 +17,7 @@ import { LayoutDefinition } from './layout';
 import { VariableDefinition } from './variable';
 import { Link } from './link';
 import { PanelDefinition } from './panel';
-import {AnnotationDefinition, AnnotationSpec} from "./annotation";
+import { AnnotationDefinition } from './annotation';
 
 export interface DashboardSpec {
   display?: Display;
