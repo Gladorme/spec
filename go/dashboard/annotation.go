@@ -17,7 +17,7 @@ import (
 	"github.com/perses/spec/go/common"
 )
 
-type Display struct {
+type AnnotationDisplay struct {
 	Name        string `json:"name" yaml:"name"`
 	Description string `json:"description,omitempty" yaml:"description,omitempty"`
 	Hidden      bool   `json:"hidden,omitempty" yaml:"hidden,omitempty"`
@@ -25,6 +25,6 @@ type Display struct {
 }
 
 type AnnotationSpec struct {
-	Display Display       `json:"display" yaml:"display"`
-	Plugin  common.Plugin `json:"plugin" yaml:"plugin"`
+	Display AnnotationDisplay `json:"display" yaml:"display"`
+	Plugin  common.Plugin     `json:"plugin" yaml:"plugin"`
 }
