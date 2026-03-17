@@ -6,7 +6,7 @@ package dashboard
 
 import "github.com/perses/spec/cue/common"
 
-#Display: {
+#AnnotationDisplay: {
 	name:         string @go(Name)
 	description?: string @go(Description)
 	hidden?:      bool   @go(Hidden)
@@ -14,6 +14,6 @@ import "github.com/perses/spec/cue/common"
 }
 
 #AnnotationSpec: {
-	display: #Display       @go(Display)
-	plugin:  common.#Plugin @go(Plugin)
+	display: #AnnotationDisplay @go(Display)
+	plugin:  common.#Plugin     @go(Plugin)
 }
