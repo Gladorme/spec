@@ -31,6 +31,7 @@ func TestValidateTimezone(t *testing.T) {
 		{"valid timezone Asia/Tokyo", "Asia/Tokyo", false},
 		{"invalid timezone name", "Invalid/Zone", true},
 		{"random string", "mars-timezone", true},
+		{"utc", "UTC", false},
 	}
 
 	for _, tt := range tests {
