@@ -11,11 +11,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+export * from './annotation';
 export * from './dashboard';
-export * from './layout';
 export * from './layout';
 export * from './link';
 export * from './panel';
 export * from './panel-refs';
-export * from './variable';
 export * from './query-type';
+export * from './variable';

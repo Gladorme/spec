@@ -11,10 +11,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './annotation';
-export * from './datasource';
-export * from './display';
-export * from './duration';
-export * from './panel';
-export * from './plugin';
-export * from './variable';
+package dashboard
+
+import (
+	"github.com/perses/spec/go/common"
+)
+
+type Display struct {
+	Name        string `json:"name" yaml:"name"`
+	Description string `json:"description,omitempty" yaml:"description,omitempty"`
+	Hidden      bool   `json:"hidden,omitempty" yaml:"hidden,omitempty"`
+	Color       string `json:"color,omitempty" yaml:"color,omitempty"`
+}
+
+type AnnotationSpec struct {
+	Display Display       `json:"display" yaml:"display"`
+	Plugin  common.Plugin `json:"plugin" yaml:"plugin"`
+}

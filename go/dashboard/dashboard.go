@@ -61,6 +61,7 @@ type Spec struct {
 	// Datasources is an optional list of datasource definition.
 	Datasources map[string]*datasource.Spec `json:"datasources,omitempty" yaml:"datasources,omitempty"`
 	Variables   []Variable                  `json:"variables,omitempty" yaml:"variables,omitempty"`
+	Annotations []AnnotationSpec            `json:"annotations,omitempty" yaml:"annotations,omitempty"`
 	Panels      map[string]*Panel           `json:"panels" yaml:"panels"`
 	Layouts     []Layout                    `json:"layouts" yaml:"layouts"`
 	// Duration is the default time range to use when getting data to fill the dashboard
