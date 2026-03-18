@@ -11,10 +11,21 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './annotation';
-export * from './datasource';
-export * from './display';
-export * from './duration';
-export * from './panel';
-export * from './plugin';
-export * from './variable';
+package dev.perses.dashboard.annotation;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import dev.perses.common.Plugin;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class AnnotationSpec {
+    @JsonProperty(value = "display", required = true)
+    public AnnotationDisplay display;
+
+    @JsonProperty(value = "plugin", required = true)
+    public Plugin plugin;
+
+    public AnnotationSpec() {
+    }
+}
+

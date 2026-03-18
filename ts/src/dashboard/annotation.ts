@@ -11,10 +11,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './annotation';
-export * from './datasource';
-export * from './display';
-export * from './duration';
-export * from './panel';
-export * from './plugin';
-export * from './variable';
+import { Definition, UnknownSpec } from '../common';
+
+export interface AnnotationDisplay {
+  name: string;
+  description?: string;
+  hidden?: boolean;
+  color?: string;
+}
+
+export interface AnnotationSpec<PluginSpec = UnknownSpec> {
+  display: AnnotationDisplay;
+  plugin: Definition<PluginSpec>;
+}
+
+export interface AnnotationDefinition<PluginSpec = UnknownSpec> extends Definition<AnnotationSpec<PluginSpec>> {
+  kind: 'Annotation';
+}
+
+export interface AnnotationData {
+  start: number;
+  end?: number;
+  title?: string;
+  legend?: string;
+  tags?: Record<string, string>;
+}

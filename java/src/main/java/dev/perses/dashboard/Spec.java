@@ -18,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import dev.perses.common.duration.Duration;
 import dev.perses.dashboard.panel.Link;
 import dev.perses.dashboard.panel.Panel;
+import dev.perses.dashboard.annotation.AnnotationSpec;
 import dev.perses.common.Display;
 
 import java.util.List;
@@ -33,6 +34,9 @@ public class Spec {
 
     @JsonProperty("variables")
     public List<Variable> variables;
+
+    @JsonProperty("annotations")
+    public List<AnnotationSpec> annotations;
 
     @JsonProperty(value = "panels", required = true)
     public Map<String, Panel> panels;
