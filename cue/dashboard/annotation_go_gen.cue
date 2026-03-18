@@ -4,8 +4,6 @@
 
 package dashboard
 
-import "github.com/perses/spec/cue/common"
-
 #AnnotationDisplay: {
 	name:         string @go(Name)
 	description?: string @go(Description)
@@ -13,7 +11,4 @@ import "github.com/perses/spec/cue/common"
 	color?:       string @go(Color)
 }
 
-#AnnotationSpec: {
-	display: #AnnotationDisplay @go(Display)
-	plugin:  common.#Plugin     @go(Plugin)
-}
+#AnnotationSpec: _

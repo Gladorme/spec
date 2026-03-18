@@ -14,6 +14,9 @@
 package dashboard
 
 import (
+	"encoding/json"
+	"errors"
+
 	"github.com/perses/spec/go/common"
 )
 
@@ -27,4 +30,37 @@ type AnnotationDisplay struct {
 type AnnotationSpec struct {
 	Display AnnotationDisplay `json:"display" yaml:"display"`
 	Plugin  common.Plugin     `json:"plugin" yaml:"plugin"`
+}
+
+func (d *AnnotationSpec) UnmarshalJSON(data []byte) error {
+	var tmp AnnotationSpec
+	type plain AnnotationSpec
+	if err := json.Unmarshal(data, (*plain)(&tmp)); err != nil {
+		return err
+	}
+	if err := (&tmp).validate(); err != nil {
+		return err
+	}
+	*d = tmp
+	return nil
+}
+
+func (d *AnnotationSpec) UnmarshalYAML(unmarshal func(any) error) error {
+	var tmp AnnotationSpec
+	type plain AnnotationSpec
+	if err := unmarshal((*plain)(&tmp)); err != nil {
+		return err
+	}
+	if err := (&tmp).validate(); err != nil {
+		return err
+	}
+	*d = tmp
+	return nil
+}
+
+func (d *AnnotationSpec) validate() error {
+	if len(d.Display.Name) == 0 {
+		return errors.New("annotation name cannot be empty")
+	}
+	return nil
 }
