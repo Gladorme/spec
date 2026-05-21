@@ -11,6 +11,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './datasource';
-export * from './proxy/http';
-export * from './proxy/sql';
+package proxy
+
+// Proxy is the generic struct of the proxy definition
+type Proxy[T any] struct {
+	Kind string `json:"kind" yaml:"kind"`
+	Spec T      `json:"spec" yaml:"spec"`
+}
