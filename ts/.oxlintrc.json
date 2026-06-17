@@ -1,0 +1,28 @@
+{
+  "plugins": ["typescript"],
+  "categories": {
+    "correctness": "error"
+  },
+  "env": {
+    "commonjs": true,
+    "es6": true
+  },
+  "rules": {
+    "typescript/explicit-function-return-type": "error",
+    "typescript/explicit-module-boundary-types": "error",
+    "typescript/array-type": ["error", { "default": "array-simple" }],
+    "eqeqeq": ["error", "always"],
+    "no-unused-vars": "off",
+    "typescript/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "no-nested-ternary": "error",
+    "no-restricted-imports": "error"
+  },
+  "ignorePatterns": ["**/dist"]
+}

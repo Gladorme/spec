@@ -12,8 +12,8 @@
 // limitations under the License.
 
 import { AbsoluteTimeRange } from '../../common';
-import { Labels } from './time-series-queries';
 import { BaseMetadata } from './base-metadata';
+import { Labels } from './time-series-queries';
 
 export interface LogEntry {
   timestamp: number;

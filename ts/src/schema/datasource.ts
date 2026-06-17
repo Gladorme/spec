@@ -12,9 +12,10 @@
 // limitations under the License.
 
 import { z } from 'zod';
+
 import { DatasourceSpec } from '../datasource';
-import { PluginSchema, pluginSchema } from './plugin';
 import { displaySchema } from './display';
+import { PluginSchema, pluginSchema } from './plugin';
 
 export const datasourceSpecSchema: z.ZodSchema<DatasourceSpec> = z.object({
   display: displaySchema.optional(),

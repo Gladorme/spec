@@ -12,6 +12,7 @@
 // limitations under the License.
 
 import { Duration } from 'date-fns';
+
 import { AbsoluteTimeRange } from './time';
 
 export const ONE_SECOND_IN_MS = 1000;
