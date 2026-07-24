@@ -12,7 +12,7 @@
 // limitations under the License.
 
 import { z } from 'zod';
-import { Link, PanelDefinition, PanelDisplay, PanelEditorValues, PanelSpec, QueryDefinition } from '../dashboard';
+import { Link, PanelDefinition, PanelDisplay, PanelSpec, QueryDefinition } from '../dashboard';
 import { PluginSchema, pluginSchema } from './plugin';
 
 export const panelDisplaySpec: z.ZodSchema<PanelDisplay> = z.object({
@@ -61,17 +61,5 @@ export function buildPanelDefinitionSchema(pluginSchema: PluginSchema): z.ZodSch
   return z.object({
     kind: z.literal('Panel'),
     spec: buildPanelSpecSchema(pluginSchema),
-  });
-}
-
-export const panelEditorSchema: z.ZodSchema<PanelEditorValues> = z.object({
-  groupId: z.number(),
-  panelDefinition: panelDefinitionSchema,
-});
-
-export function buildPanelEditorSchema(pluginSchema: PluginSchema): z.ZodSchema<PanelEditorValues> {
-  return z.object({
-    groupId: z.number(),
-    panelDefinition: buildPanelDefinitionSchema(pluginSchema),
   });
 }

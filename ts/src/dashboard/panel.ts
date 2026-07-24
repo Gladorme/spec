@@ -37,13 +37,3 @@ export interface PanelSpec<PluginSpec = UnknownSpec> {
 export interface PanelRef {
   $ref: `#/spec/panels/${string}`;
 }
-
-export type PanelGroupId = number;
-
-/**
- * Panel values that can be edited in the panel editor.
- */
-export interface PanelEditorValues {
-  groupId: PanelGroupId;
-  panelDefinition: PanelDefinition;
-}
