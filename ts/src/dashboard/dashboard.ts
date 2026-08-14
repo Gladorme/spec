@@ -14,9 +14,9 @@
 import { Display, DurationString } from '../common';
 import { DatasourceSpec } from '../datasource';
 import { LayoutDefinition } from './layout';
-import { VariableDefinition } from './variable';
 import { Link } from './link';
 import { PanelDefinition } from './panel';
+import { VariableDefinition } from './variable';
 
 export interface DashboardSpec {
   display?: Display;

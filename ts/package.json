@@ -22,8 +22,11 @@
     "type-check": "tsc --noEmit",
     "test": "cross-env TZ=UTC jest",
     "test:watch": "cross-env TZ=UTC jest --watch",
-    "lint": "eslint src --ext .ts",
-    "lint:fix": "eslint --fix src --ext .ts"
+    "lint": "oxlint src",
+    "lint:ci": "oxlint src --max-warnings=0",
+    "lint:fix": "oxlint --fix src",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
@@ -31,16 +34,12 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@eslint/js": "10.0.1",
     "@swc/cli": "^0.8.0",
     "@types/node": "^22.13.1",
     "concurrently": "^9.2.1",
-    "eslint": "^10.0.2",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "5.5.5",
-    "prettier": "^3.8.1",
-    "typescript": "5.9.3",
-    "typescript-eslint": "^8.56.1"
+    "oxfmt": "0.55.0",
+    "oxlint": "1.70.0",
+    "typescript": "5.9.3"
   },
   "files": [
     "dist"
