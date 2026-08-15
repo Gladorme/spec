@@ -12,9 +12,10 @@
 // limitations under the License.
 
 import { z } from 'zod';
+
 import { Link, PanelDefinition, PanelDisplay, PanelSpec, QueryDefinition } from '../dashboard';
-import { PluginSchema, pluginSchema } from './plugin';
 import { annotationSpecSchema } from './annotation';
+import { PluginSchema, pluginSchema } from './plugin';
 
 export const panelDisplaySpec: z.ZodSchema<PanelDisplay> = z.object({
   name: z.string().optional(),
@@ -45,10 +46,10 @@ export const panelSpecSchema: z.ZodSchema<PanelSpec> = z.object({
   annotations: z.array(annotationSpecSchema).optional(),
 });
 
-export function buildPanelSpecSchema(pluginSchema: PluginSchema): z.ZodSchema<PanelSpec> {
+export function buildPanelSpecSchema(customPluginSchema: PluginSchema): z.ZodSchema<PanelSpec> {
   return z.object({
     display: panelDisplaySpec.optional(),
-    plugin: pluginSchema,
+    plugin: customPluginSchema,
     queries: z.array(querySpecSchema).optional(),
     links: z.array(linkSchema).optional(),
     annotations: z.array(annotationSpecSchema).optional(),
@@ -60,9 +61,9 @@ export const panelDefinitionSchema: z.ZodSchema<PanelDefinition> = z.object({
   spec: panelSpecSchema,
 });
 
-export function buildPanelDefinitionSchema(pluginSchema: PluginSchema): z.ZodSchema<PanelDefinition> {
+export function buildPanelDefinitionSchema(customPluginSchema: PluginSchema): z.ZodSchema<PanelDefinition> {
   return z.object({
     kind: z.literal('Panel'),
-    spec: buildPanelSpecSchema(pluginSchema),
+    spec: buildPanelSpecSchema(customPluginSchema),
   });
 }
