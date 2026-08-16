@@ -14,11 +14,11 @@ Before editing:
 
 ## Architecture map
 
-- `go/`: canonical Go resource types, validation behavior, and tests.
+- `go/`: Go resource types, validation behavior, and tests.
 - `cue/`: CUE schemas and validation. Files ending in `_go_gen.cue` are generated from Go; companion `_patch.cue` files
   hold CUE-specific constraints that generation cannot express.
 - `ts/`: strict TypeScript contracts and Zod runtime schemas published for UI and plugin consumers.
-- `java/`: Java 21 model and validation artifacts built with Maven.
+- `java/`: Java models and validation artifacts built with Maven.
 
 The main `perses` repository consumes these contracts in its API and application. `perses/shared` and `perses/plugins`
 consume the TypeScript and schema layers. Do not add product-specific behavior or UI components here.
@@ -41,7 +41,7 @@ consume the TypeScript and schema layers. Do not add product-specific behavior o
 
 ## Validation
 
-Use Go 1.26.x, Node.js from `ts/.nvmrc`, the npm version from `ts/package.json`, and Java 21 where applicable.
+Use the same Go version as in `go.mod`, Node.js from `ts/.nvmrc`, the npm version from `ts/package.json`, and Java version from `pom.xml` where applicable.
 
 For Go and CUE changes, run the relevant checks from the repository root:
 
