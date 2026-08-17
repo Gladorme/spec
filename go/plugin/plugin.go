@@ -36,6 +36,7 @@ const (
 	KindQuery           Kind = "Query"
 	KindAlertsQuery     Kind = "AlertsQuery"
 	KindSilencesQuery   Kind = "SilencesQuery"
+	KindJsonQuery       Kind = "JsonQuery"
 	KindExplore         Kind = "Explore"
 	KindAnnotation      Kind = "Annotation"
 )
@@ -51,6 +52,7 @@ var KindMap = map[Kind]bool{
 	KindQuery:           true,
 	KindAlertsQuery:     true,
 	KindSilencesQuery:   true,
+	KindJsonQuery:       true,
 	KindExplore:         true,
 	KindAnnotation:      true,
 }
@@ -62,7 +64,8 @@ func (k Kind) IsQuery() bool {
 		k == KindProfileQuery ||
 		k == KindLogQuery ||
 		k == KindAlertsQuery ||
-		k == KindSilencesQuery
+		k == KindSilencesQuery ||
+		k == KindJsonQuery
 }
 
 type Metadata struct {

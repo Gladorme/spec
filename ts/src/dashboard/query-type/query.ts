@@ -18,6 +18,7 @@ import { LogData } from './log-data';
 import { ProfileData } from './profile-data';
 import { AlertsData } from './alerts-data';
 import { SilencesData } from './silences-data';
+import { JsonData } from './json-data';
 
 interface QuerySpec<PluginSpec> {
   name?: string;
@@ -43,6 +44,7 @@ export interface QueryType {
   LogQuery: LogData;
   AlertsQuery: AlertsData;
   SilencesQuery: SilencesData;
+  JsonQuery: JsonData;
 }
 
 /**
@@ -50,9 +52,15 @@ export interface QueryType {
  * @param type
  */
 export function isValidQueryPluginType(type: string): type is QueryPluginType {
-  return ['TimeSeriesQuery', 'TraceQuery', 'ProfileQuery', 'LogQuery', 'AlertsQuery', 'SilencesQuery'].includes(
-    type as QueryPluginType
-  );
+  return [
+    'TimeSeriesQuery',
+    'TraceQuery',
+    'ProfileQuery',
+    'LogQuery',
+    'AlertsQuery',
+    'SilencesQuery',
+    'JsonQuery',
+  ].includes(type as QueryPluginType);
 }
 
 /**

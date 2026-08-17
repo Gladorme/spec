@@ -11,14 +11,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-export * from './alerts-data';
-export * from './json-data';
-export * from './profile-data';
-export * from './query';
-export * from './base-metadata';
-export * from './silences-data';
-export * from './time-series-queries';
-export * from './time-series-data';
-export * from './trace-data';
-export * from './log-data';
-export * from './otlp';
+export type JsonData = {
+  data: unknown;
+};
