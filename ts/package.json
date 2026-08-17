@@ -23,7 +23,6 @@
     "test": "cross-env TZ=UTC jest",
     "test:watch": "cross-env TZ=UTC jest --watch",
     "lint": "oxlint src",
-    "lint:ci": "oxlint src",
     "lint:fix": "oxlint --fix src",
     "format": "oxfmt",
     "format:check": "oxfmt --check"

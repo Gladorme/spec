@@ -49,7 +49,7 @@ For Go and CUE changes, run the relevant checks from the repository root:
 make checkformat
 make checkunused
 make checkstyle
-go test ./...
+make go-test
 make cue-eval
 make cue-test
 ```
@@ -60,7 +60,7 @@ For TypeScript changes, run from `ts/`:
 
 ```sh
 npm ci
-npm run lint:ci
+npm run lint
 npm run format:check
 npm run type-check
 npm run build

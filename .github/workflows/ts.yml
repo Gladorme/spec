@@ -29,7 +29,7 @@ jobs:
           nvmrc_path: "./ts/.nvmrc"
       - name: install deps
         run: cd ./ts && npm ci
-      - run: cd ./ts && npm run lint:ci
+      - run: cd ./ts && npm run lint
       - run: cd ./ts && npm run format:check
   type_check:
     name: "type check"
