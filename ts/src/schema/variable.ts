@@ -101,7 +101,7 @@ export const variableTextSchema = z.object({
 
 export const variableSpecSchema: z.ZodSchema<TextVariableDefinition | ListVariableDefinition> = z.discriminatedUnion(
   'kind',
-  [variableTextSchema, variableListSchema]
+  [variableTextSchema, variableListSchema],
 );
 
 export function buildVariableSpecSchema(customPluginSchema: PluginSchema): z.ZodSchema<VariableDefinition> {
