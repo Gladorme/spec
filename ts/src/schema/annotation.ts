@@ -12,6 +12,7 @@
 // limitations under the License.
 
 import { z } from 'zod';
+
 import { AnnotationDisplay, AnnotationSpec } from '../dashboard';
 import { PluginSchema, pluginSchema } from './plugin';
 
@@ -22,10 +23,10 @@ export const annotationDisplaySchema: z.ZodSchema<AnnotationDisplay> = z.object(
   color: z.string().optional(),
 });
 
-export function buildAnnotationSpecSchema(pluginSchema: PluginSchema): z.ZodSchema<AnnotationSpec> {
+export function buildAnnotationSpecSchema(customPluginSchema: PluginSchema): z.ZodSchema<AnnotationSpec> {
   return z.object({
     display: annotationDisplaySchema,
-    plugin: pluginSchema,
+    plugin: customPluginSchema,
   });
 }
 

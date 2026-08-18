@@ -1,21 +1,13 @@
 {
-  "include": [
-    "src"
-  ],
+  "include": ["src"],
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "@perses-dev/spec": [
-        "./src"
-      ]
+      "@perses-dev/spec": ["./src"]
     },
-    "target": "es2022",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "target": "es2023",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "jsx": "react-jsx",
     "skipLibCheck": true,
@@ -35,7 +27,7 @@
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs",
-      "target": "es2022",
+      "target": "es2023",
       "esModuleInterop": true
     }
   }

@@ -13,11 +13,11 @@
 
 import { Display, DurationString } from '../common';
 import { DatasourceSpec } from '../datasource';
+import { AnnotationSpec } from './annotation';
 import { LayoutDefinition } from './layout';
-import { VariableDefinition } from './variable';
 import { Link } from './link';
 import { PanelDefinition } from './panel';
-import { AnnotationSpec } from './annotation';
+import { VariableDefinition } from './variable';
 
 export interface DashboardSpec {
   display?: Display;
