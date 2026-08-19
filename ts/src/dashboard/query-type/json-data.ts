@@ -11,6 +11,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import { BaseMetadata } from './base-metadata';
+
 export type JsonData = {
   data: unknown;
+  metadata?: JsonMetadata;
 };
+
+export interface JsonMetadata extends BaseMetadata {
+  [key: string]: unknown;
+}
