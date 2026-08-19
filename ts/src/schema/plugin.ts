@@ -13,8 +13,14 @@
 
 import { z } from 'zod';
 
+export const pluginDefinitionMetadataSchema = z.object({
+  version: z.string().optional(),
+  registry: z.string().optional(),
+});
+
 export const pluginSchema = z.object({
   kind: z.string().min(1, 'Required'),
+  metadata: pluginDefinitionMetadataSchema.optional(),
   spec: z.record(z.string(), z.any()),
 });
 
