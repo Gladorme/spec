@@ -100,7 +100,7 @@ jobs:
           path: ts/dist
       - name: Dry run
         if: ${{ !github.event.release.tag_name }}
-        run: cd ts && npm publish --access public --dry-run
+        run: cd ts && npm publish --access public --dry-run --tag latest
       - name: Publish npm package
         if: ${{ github.event.release.tag_name }}
-        run: cd ts && npm publish --access public
+        run: cd ts && npm publish --access public --tag latest

@@ -11,9 +11,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Definition, Display, UnknownSpec } from '../common';
-import { HTTPProxy } from './proxy/http';
-import { SQLProxy } from './proxy/sql';
+import type { Definition, Display, UnknownSpec } from '../common';
+import type { HTTPProxy } from './proxy/http';
+import type { SQLProxy } from './proxy/sql';
 
 export interface DatasourceSpec<PluginSpec = UnknownSpec> {
   display?: Display;

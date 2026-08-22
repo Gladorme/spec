@@ -14,7 +14,6 @@
 import { sub } from 'date-fns';
 
 import {
-  DurationString,
   ONE_DAY_IN_MS,
   ONE_HOUR_IN_MS,
   ONE_MINUTE_IN_MS,
@@ -23,6 +22,7 @@ import {
   ONE_YEAR_IN_MS,
   parseDurationString,
 } from './duration';
+import type { DurationString } from './duration';
 
 export type UnixTimeMs = number;
 

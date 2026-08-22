@@ -11,8 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { UnixTimeMs, UnknownSpec } from '../../common';
-import { QueryDefinition } from './query';
+import type { UnixTimeMs, UnknownSpec } from '../../common';
+import type { QueryDefinition } from './query';
 
 export type TimeSeriesQueryDefinition<PluginSpec = UnknownSpec> = QueryDefinition<'TimeSeriesQuery', PluginSpec>;
 

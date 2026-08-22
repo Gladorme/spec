@@ -11,9 +11,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Duration } from 'date-fns';
+import type { Duration } from 'date-fns';
 
-import { AbsoluteTimeRange } from './time';
+import type { AbsoluteTimeRange } from './time';
 
 export const ONE_SECOND_IN_MS = 1000;
 export const ONE_MINUTE_IN_MS = 60000;
