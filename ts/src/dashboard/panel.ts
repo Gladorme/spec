@@ -11,10 +11,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Definition, UnknownSpec } from '../common';
-import { AnnotationSpec } from './annotation';
-import { Link } from './link';
-import { QueryDefinition } from './query-type';
+import { type Definition, type UnknownSpec } from '../common';
+import { type AnnotationSpec } from './annotation';
+import { type Link } from './link';
+import { type QueryDefinition } from './query-type';
 
 export interface PanelDisplay {
   name?: string;

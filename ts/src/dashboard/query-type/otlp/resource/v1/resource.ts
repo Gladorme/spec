@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { KeyValue } from '../../common/v1/common';
+import { type KeyValue } from '../../common/v1/common';
 
 // https://github.com/open-telemetry/opentelemetry-proto/blob/v1.5.0/opentelemetry/proto/resource/v1/resource.proto
 

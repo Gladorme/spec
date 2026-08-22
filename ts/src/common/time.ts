@@ -14,7 +14,7 @@
 import { sub } from 'date-fns';
 
 import {
-  DurationString,
+  type DurationString,
   ONE_DAY_IN_MS,
   ONE_HOUR_IN_MS,
   ONE_MINUTE_IN_MS,

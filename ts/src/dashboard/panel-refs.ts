@@ -11,8 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { DashboardSpec } from './dashboard';
-import { PanelDefinition, PanelRef } from './panel';
+import { type DashboardSpec } from './dashboard';
+import { type PanelDefinition, type PanelRef } from './panel';
 
 /**
  * Resolve a PanelRef (JSON reference) against the provided DashboardSpec to

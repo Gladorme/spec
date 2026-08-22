@@ -1,20 +1,16 @@
 {
   "$schema": "https://swc.rs/schema.json",
   "jsc": {
+    "baseUrl": ".",
     "parser": {
-      "syntax": "typescript",
-      "tsx": true
+      "syntax": "typescript"
     },
-    "target": "es2022",
-    "transform": {
-      "react": {
-        "runtime": "automatic",
-        "useBuiltins": true
-      }
-    }
+    "target": "es2023"
   },
   "module": {
-    "type": "es6"
+    "type": "es6",
+    "resolveFully": true,
+    "outFileExtension": "js"
   },
   "sourceMaps": true,
   "exclude": ["\\.(stories|test)\\."]

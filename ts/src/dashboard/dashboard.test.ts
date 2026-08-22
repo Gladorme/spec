@@ -13,7 +13,7 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { DashboardSelector, DashboardSpec } from './dashboard';
+import { type DashboardSelector, type DashboardSpec } from './dashboard';
 
 // A realistic JSON payload exercising every field of DashboardSpec, mirroring the style of
 // the Go unmarshalling tests (see go/dashboard/panel_test.go): a JSON string is parsed, and the

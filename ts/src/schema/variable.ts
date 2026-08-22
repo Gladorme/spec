@@ -14,14 +14,14 @@
 import { z } from 'zod';
 
 import {
-  ListVariableDefinition,
-  ListVariableSpec,
-  TextVariableDefinition,
-  TextVariableSpec,
-  VariableDefinition,
-  VariableDisplay,
+  type ListVariableDefinition,
+  type ListVariableSpec,
+  type TextVariableDefinition,
+  type TextVariableSpec,
+  type VariableDefinition,
+  type VariableDisplay,
 } from '../dashboard';
-import { PluginSchema, pluginSchema } from './plugin';
+import { type PluginSchema, pluginSchema } from './plugin';
 
 export const variableDisplaySchema: z.ZodSchema<VariableDisplay> = z.object({
   name: z.string().optional(),

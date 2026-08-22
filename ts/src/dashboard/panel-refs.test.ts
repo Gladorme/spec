@@ -13,8 +13,8 @@
 
 import { describe, expect, it } from 'vitest';
 
-import { DashboardSpec } from './dashboard';
-import { PanelDefinition, PanelRef } from './panel';
+import { type DashboardSpec } from './dashboard';
+import { type PanelDefinition, type PanelRef } from './panel';
 import { createPanelRef, getPanelKeyFromRef, resolvePanelRef } from './panel-refs';
 
 function buildPanelDefinition(name: string): PanelDefinition {

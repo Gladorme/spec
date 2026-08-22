@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Definition, Display, UnknownSpec } from '../common';
+import { type Definition, type Display, type UnknownSpec } from '../common';
 
 export type VariableName = string;
 

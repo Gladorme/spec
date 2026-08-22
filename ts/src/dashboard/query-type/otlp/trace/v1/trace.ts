@@ -11,8 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { InstrumentationScope, KeyValue } from '../../common/v1/common';
-import { Resource } from '../../resource/v1/resource';
+import { type InstrumentationScope, type KeyValue } from '../../common/v1/common';
+import { type Resource } from '../../resource/v1/resource';
 
 // https://github.com/open-telemetry/opentelemetry-proto/blob/v1.5.0/opentelemetry/proto/trace/v1/trace.proto
 // https://github.com/open-telemetry/opentelemetry-proto/blob/v1.5.0/examples/trace.json

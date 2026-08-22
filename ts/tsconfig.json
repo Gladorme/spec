@@ -1,26 +1,19 @@
 {
   "include": ["src"],
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "paths": {
-      "@perses-dev/spec": ["./src"]
-    },
     "target": "es2023",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["es2023"],
     "module": "esnext",
-    "jsx": "react-jsx",
-    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "types": [],
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
+    "verbatimModuleSyntax": true,
     "isolatedModules": true,
+    "strict": true,
     "noUncheckedIndexedAccess": true,
-    "declaration": true,
-    "declarationMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmit": true,
     "pretty": true
   }
 }

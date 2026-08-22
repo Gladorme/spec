@@ -11,8 +11,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { BaseMetadata } from './base-metadata';
-import { TracesData } from './otlp/trace/v1/trace';
+import { type BaseMetadata } from './base-metadata';
+import { type TracesData } from './otlp/trace/v1/trace';
 
 /**
  * Partial trace information returned by search endpoint
