@@ -11,12 +11,23 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// https://github.com/open-telemetry/opentelemetry-proto/blob/v1.5.0/opentelemetry/proto/common/v1/common.proto
+// https://github.com/open-telemetry/opentelemetry-proto/blob/v1.11.0/opentelemetry/proto/common/v1/common.proto
 
-export interface KeyValue {
-  key: string;
+interface KeyValueBase {
   value: AnyValue;
 }
+
+export type KeyValue = KeyValueBase &
+  (
+    | {
+        key: string;
+        keyStrindex?: never;
+      }
+    | {
+        key?: never;
+        keyStrindex: number;
+      }
+  );
 
 export type AnyValue =
   | { stringValue: string }
@@ -25,7 +36,8 @@ export type AnyValue =
   | { boolValue: boolean }
   | { arrayValue: ArrayValue }
   | { kvlistValue: KeyValueList }
-  | { bytesValue: string };
+  | { bytesValue: string }
+  | { stringValueStrindex: number };
 
 export interface ArrayValue {
   values?: AnyValue[];
@@ -39,4 +51,12 @@ export interface InstrumentationScope {
   name?: string;
   version?: string;
   attributes?: KeyValue[];
+  droppedAttributesCount?: number;
+}
+
+export interface EntityRef {
+  schemaUrl?: string;
+  type: string;
+  idKeys: string[];
+  descriptionKeys?: string[];
 }

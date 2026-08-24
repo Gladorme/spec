@@ -12,58 +12,14 @@
 // limitations under the License.
 
 import { BaseMetadata } from './base-metadata';
+import { ProfilesData } from './otlp/profiles/v1development/profiles';
 
 /**
- * A stackTrace
- * It corresponds to a function called during a program execution.
- * Children of a function are functions called by the parent function during its execution.
- */
-export interface StackTrace {
-  id: number; // index of function's name in names array
-  name: string; // function's name
-  level: number; // level of the function in the flame graph
-  start: number; // time at which the function starts
-  end: number; // time at which the function ends
-  total: number; // total samples (including the samples in its children nodes)
-  self: number; // self samples (excluding the samples in its children nodes)
-  children: StackTrace[];
-}
-
-/**
- * Timeline attribute contains data to draw the chart showing the evolution of the profiled resource over time (CPU, memory, etc.).
- * It is like a metric and it helps to identify bottlenecks.
- */
-export interface Timeline {
-  startTime: number; // Time at which the timeline starts, as a Unix timestamp
-  samples: number[]; // A sequence of samples starting at startTime, spaced by durationDelta seconds
-  durationDelta: number; // Time delta between samples, in seconds
-}
-
-/**
- * An entire profile
- * It is the stacktrace of the root function.
- */
-export interface Profile {
-  stackTrace: StackTrace;
-}
-
-/**
- * A generalized data-model that will be used by Panel components
- * to display profiles.
+ * Profile query result using the OpenTelemetry Profiles data model.
  */
 export interface ProfileData {
-  profile: Profile;
-  timeline?: Timeline;
-
-  numTicks?: number; // Total number of samples
-  maxSelf?: number; // Maximum self value in any node
-
+  profile: ProfilesData;
   metadata?: ProfileMetaData;
 }
 
-export interface ProfileMetaData extends BaseMetadata {
-  spyName: string; // Name of the spy / profiler used to generate the profile, if any
-  sampleRate: number; // Sample rate at which the profiler was operating
-  units: string; // The unit of measurement for the profiled data
-  name: string; // A name that identifies the profile. [Is this really necessary?]
-}
+export type ProfileMetaData = BaseMetadata;

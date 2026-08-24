@@ -12,5 +12,6 @@
 // limitations under the License.
 
 export * as otlpcommonv1 from './common/v1/common';
+export * as otlpprofilesv1development from './profiles/v1development/profiles';
 export * as otlpresourcev1 from './resource/v1/resource';
 export * as otlptracev1 from './trace/v1/trace';
