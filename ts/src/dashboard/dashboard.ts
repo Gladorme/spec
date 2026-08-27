@@ -11,13 +11,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Display, DurationString } from '../common';
-import { DatasourceSpec } from '../datasource';
-import { AnnotationSpec } from './annotation';
-import { LayoutDefinition } from './layout';
-import { Link } from './link';
-import { PanelDefinition } from './panel';
-import { VariableDefinition } from './variable';
+import type { Display, DurationString } from '../common';
+import type { DatasourceSpec } from '../datasource';
+import type { AnnotationSpec } from './annotation';
+import type { LayoutDefinition } from './layout';
+import type { Link } from './link';
+import type { PanelDefinition } from './panel';
+import type { VariableDefinition } from './variable';
 
 export interface DashboardSpec {
   display?: Display;

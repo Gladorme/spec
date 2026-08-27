@@ -11,7 +11,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { BaseMetadata } from './base-metadata';
+import type { BaseMetadata } from './base-metadata';
 
 export type AlertState = 'inactive' | 'pending' | 'firing' | 'resolved';
 

@@ -13,7 +13,7 @@
 
 import { z } from 'zod';
 
-import {
+import type {
   ListVariableDefinition,
   ListVariableSpec,
   TextVariableDefinition,
@@ -21,7 +21,8 @@ import {
   VariableDefinition,
   VariableDisplay,
 } from '../dashboard';
-import { PluginSchema, pluginSchema } from './plugin';
+import { pluginSchema } from './plugin';
+import type { PluginSchema } from './plugin';
 
 export const variableDisplaySchema: z.ZodSchema<VariableDisplay> = z.object({
   name: z.string().optional(),

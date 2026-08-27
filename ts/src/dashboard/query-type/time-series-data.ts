@@ -11,9 +11,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { AbsoluteTimeRange } from '../../common';
-import { BaseMetadata } from './base-metadata';
-import { Labels, TimeSeriesValueTuple, TimeSeriesHistogramTuple } from './time-series-queries';
+import type { AbsoluteTimeRange } from '../../common';
+import type { BaseMetadata } from './base-metadata';
+import type { Labels, TimeSeriesValueTuple, TimeSeriesHistogramTuple } from './time-series-queries';
 
 export interface TimeScale {
   startMs: number;

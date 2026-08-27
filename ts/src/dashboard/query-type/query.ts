@@ -11,14 +11,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Definition, UnknownSpec } from '../../common';
-import { AlertsData } from './alerts-data';
-import { JsonData } from './json-data';
-import { LogData } from './log-data';
-import { ProfileData } from './profile-data';
-import { SilencesData } from './silences-data';
-import { TimeSeriesData } from './time-series-data';
-import { TraceData } from './trace-data';
+import type { Definition, UnknownSpec } from '../../common';
+import type { AlertsData } from './alerts-data';
+import type { JsonData } from './json-data';
+import type { LogData } from './log-data';
+import type { ProfileData } from './profile-data';
+import type { SilencesData } from './silences-data';
+import type { TimeSeriesData } from './time-series-data';
+import type { TraceData } from './trace-data';
 
 interface QuerySpec<PluginSpec> {
   name?: string;

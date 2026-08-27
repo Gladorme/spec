@@ -103,7 +103,11 @@ jobs:
           path: ts/dist
       - name: Dry run
         if: ${{ !github.event.release.tag_name }}
-        run: cd ts && npm publish --access public --dry-run
+        run: |
+          DIST_TAG=$([[ "${GITHUB_REF_NAME}" == *-* ]] && echo next || echo latest)
+          cd ts &&  npm publish --access public --dry-run --tag "${DIST_TAG}"
       - name: Publish npm package
         if: ${{ github.event.release.tag_name }}
-        run: cd ts && npm publish --access public
+        run: |
+          DIST_TAG=$([[ "${GITHUB_REF_NAME}" == *-* ]] && echo next || echo latest)
+          cd ts &&  npm publish --access public --tag "${DIST_TAG}"

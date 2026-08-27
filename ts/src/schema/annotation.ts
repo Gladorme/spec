@@ -13,8 +13,9 @@
 
 import { z } from 'zod';
 
-import { AnnotationDisplay, AnnotationSpec } from '../dashboard';
-import { PluginSchema, pluginSchema } from './plugin';
+import type { AnnotationDisplay, AnnotationSpec } from '../dashboard';
+import { pluginSchema } from './plugin';
+import type { PluginSchema } from './plugin';
 
 export const annotationDisplaySchema: z.ZodSchema<AnnotationDisplay> = z.object({
   name: z.string(),

@@ -13,9 +13,10 @@
 
 import { z } from 'zod';
 
-import { DatasourceSpec } from '../datasource';
+import type { DatasourceSpec } from '../datasource';
 import { displaySchema } from './display';
-import { PluginSchema, pluginSchema } from './plugin';
+import { pluginSchema } from './plugin';
+import type { PluginSchema } from './plugin';
 
 export const datasourceSpecSchema: z.ZodSchema<DatasourceSpec> = z.object({
   display: displaySchema.optional(),

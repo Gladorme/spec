@@ -13,9 +13,10 @@
 
 import { z } from 'zod';
 
-import { Link, PanelDefinition, PanelDisplay, PanelSpec, QueryDefinition } from '../dashboard';
+import type { Link, PanelDefinition, PanelDisplay, PanelSpec, QueryDefinition } from '../dashboard';
 import { annotationSpecSchema } from './annotation';
-import { PluginSchema, pluginSchema } from './plugin';
+import { pluginSchema } from './plugin';
+import type { PluginSchema } from './plugin';
 
 export const panelDisplaySpec: z.ZodSchema<PanelDisplay> = z.object({
   name: z.string().optional(),
