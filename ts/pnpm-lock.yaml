@@ -116,14 +116,14 @@ importers:
         specifier: ^15.1.1
         version: 15.2.0
       zod:
-        specifier: ^3.21.4
+        specifier: ^3.25.76
         version: 3.25.76
     devDependencies:
       '@swc/cli':
-        specifier: ^0.8.0
+        specifier: ^0.8.1
         version: 0.8.1(@swc/core@1.16.1)(supports-color@10.2.2)
       '@types/node':
-        specifier: ^24.0.0
+        specifier: ^24.13.3
         version: 24.13.3
       concurrently:
         specifier: ^10.0.3
