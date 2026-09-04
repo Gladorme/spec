@@ -46,10 +46,6 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": ">=24",
-    "pnpm": ">=12"
-  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -60,6 +56,5 @@
       "version": "24",
       "onFail": "download"
     }
-  },
-  "packageManager": "pnpm@12.1.0"
+  }
 }
