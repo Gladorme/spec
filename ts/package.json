@@ -29,7 +29,7 @@
     "format:check": "oxfmt --check"
   },
   "dependencies": {
-    "date-fns": "^4.1.0",
+    "date-fns": "^4.2.1",
     "mathjs": "^15.1.1",
     "zod": "^3.25.76"
   },
